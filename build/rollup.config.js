@@ -9,9 +9,9 @@ const version = pkg.version;
 rimraf.sync('dist');
 
 export default {
-  input: 'src/scripts/index.js',
+  input: ['src/scripts/index.js'],
   output: {
-    file: 'dist/src/scripts/bundle.ts',
+    dir: 'dist',
     format: 'amd'
   },
   plugins: [

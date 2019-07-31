@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>{title}</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Mathieu Rousseau">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+  <meta name="description" content="Practice your keys on your instrument"/>
+  <meta name="theme-color" content="#000">
+
+  <link rel="manifest" href={@hash path="dist/manifest.json"}{/hash}>
+  <link rel="shortcut icon" href="/static/assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
+
+  {?inlineStyle}
+  <style>
+    {inlineStyle|s}
+  </style>
+  {/inlineStyle}
+
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+  {#styles}
+    <link rel="preload" href="{@hash path=.}{/hash}" as="style">
+    <link rel="stylesheet" href="{@hash path=.}{/hash}">
+  {/styles}
+</head>
+
+<body>

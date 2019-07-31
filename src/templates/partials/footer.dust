@@ -1,0 +1,5 @@
+{#scripts}
+    <script type="text/javascript" defer src="{@hash path=.}{/hash}"></script>
+  {/scripts}
+</body>
+</html>

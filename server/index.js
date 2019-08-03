@@ -18,9 +18,6 @@ const staticOptions = {
   maxAge: production ? (365 * 24 * 60 * 60 * 1000) : 0
 }
 
-// middlewares
-app.use(session);
-app.use(userMiddleware);
 app.use(removeHash);
 app.use(bodyParser.json());
 app.use(compression());
@@ -29,10 +26,7 @@ app.use(compression());
 app.use('/static', serveStatic(path.join(__dirname, '../dist'), staticOptions));
 
 // routes
-app.get('/health', (req, res) => res.send('streamwave server is up.'));
-app.use('/auth', require('./auth'));
-app.use('/library', require('./library'));
-//app.use('/push', require('./push'));
+app.get('/health', (req, res) => res.send('server is up.'));
 app.use('/service-worker.js', require('./service-worker'));
 app.use('/', require('./dynamic'));
 

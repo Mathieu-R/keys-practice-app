@@ -2,16 +2,23 @@
   "name": "keys-practice-app",
   "version": "1.0.0",
   "description": "Practice your keyboard or whatever instrument you play with a web app",
-  "main": "src/scripts/bundle.js",
   "scripts": {
-    "start": "npm run watch-js ",
-    "build": "npm run build-js && npm run build-static && cp src/index.html dist",
+    "start": "npm run build-css && npm run copy && npm run watch",
+    "build": "npm run build-js && npm run build-css && npm run copy",
+    "watch": "concurrently \"npm run watch-js\" \"npm run watch-css\"",
     "watch-js": "rollup -wc build/rollup.config.js",
-    "build-js": "rollup -c build/rollup.config.js",
-    "build-static": "rsync -rm src/static dist",
-    "type-check": "tsc --noEmit",
+    "watch-css": "node-sass src/style -w ./dist/css/keys-practice.css",
+    "build-js": "rollup -c build/rollup.config.prod.js",
+    "build-css": "npm run create-css-folder && node-sass src/style/index.scss ./dist/css/keys-practice.css && npm run clean-css",
+    "copy": "npm run copy-static && npm run copy-manifest && npm run copy-sw",
+    "copy-static": "copy src/static dist/static",
+    "copy-manifest": "cp-cli src/manifest.json dist/manifest.json",
+    "copy-sw": "cp-cli src/sw.js dist/sw.js",
+    "clean-css": "node build/clean-css",
+    "create-css-folder": "mkdirp ./dist/css",
     "release": "npm run build && npm version patch",
     "serve": "node server/index.js",
+    "type-check": "tsc --noEmit",
     "bundlesize": "bundlesize --config bundlesize.json"
   },
   "repository": {
@@ -34,15 +41,23 @@
     "adaro": "^1.0.4",
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.17.0",
-    "rollup-plugin-loadz0r": "^0.7.2",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "serve-static": "^1.14.1",
-    "typescript": "^3.5.3"
+    "serve-static": "^1.14.1"
   },
   "devDependencies": {
-    "tslint": "^5.18.0"
+    "@surma/rollup-plugin-off-main-thread": "^1.1.1",
+    "clean-css": "^4.2.1",
+    "concurrently": "^4.1.1",
+    "copy-dir-cli": "0.0.3",
+    "cp-cli": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.12.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.18.0",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "rollup-watch": "^4.3.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   }
 }

@@ -23,9 +23,9 @@ const options = {
 // basic view options
 const viewOptions = {
   title: 'Keys Practice',
-  styles: ['dist/src/css/keys-practice.css'],
+  styles: ['dist/css/keys-practice.css'],
   //inlineStyle,
-  scripts: ['dist/src/scripts/bundle.js']
+  scripts: ['dist/bootstrap.js']
 }
 
 app.engine('dust', adaro.dust(options));
@@ -33,8 +33,8 @@ app.set('view engine', 'dust');
 app.set('views', templatePath);
 
 // app
-app.get('/', auth, (req, res) => {
-  res.status(200).render('index', viewOptions);
+app.get('/', (req, res) => {
+  res.status(200).render('sections/home', viewOptions);
 });
 
 module.exports = app;

@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(compression());
 
 // static files
-app.use('/static', serveStatic(path.join(__dirname, '../dist'), staticOptions));
+app.use('/static', serveStatic(path.join(__dirname, '../dist/static'), staticOptions));
 
 // routes
 app.get('/health', (req, res) => res.send('server is up.'));

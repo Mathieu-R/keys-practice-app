@@ -1,0 +1,27 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: #FFF;
+  --mobile: 530px;
+  @media screen and (max-width: var(--mobile)) {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: #b33939;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  color: #FFF;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+

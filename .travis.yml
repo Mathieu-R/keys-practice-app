@@ -1,0 +1,18 @@
+notifications:
+  email: false
+sudo: required
+language: node_js
+dist: trusty
+node_js:
+  - stable
+addons:
+ chrome: stable
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  # test build for bundlesize
+  - npm run build
+  - npm run bundlesize

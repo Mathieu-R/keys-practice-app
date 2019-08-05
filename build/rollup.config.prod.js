@@ -10,7 +10,8 @@ export default {
   input: ['src/bootstrap.ts'],
   output: {
     dir: 'dist',
-    format: 'amd'
+    format: 'amd',
+    sourcemap: false
   },
   plugins: [
     typescript2(),

@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#000">
 
   <link rel="manifest" href={@hash path="dist/manifest.json"}{/hash}>
-  <link rel="shortcut icon" href="/static/icons/iconfavicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/static/icons/favicon.ico" type="image/x-icon">
 
   {?inlineStyle}
@@ -19,6 +19,10 @@
   {/inlineStyle}
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       width: 100%;
       height: 100%;

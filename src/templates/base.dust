@@ -1,9 +1,6 @@
 {>"partials/header" title=title style=style inlineStyle=inlineStyle /}
 <div class="app">
-  <section class="home">
-    {+section/}
-  </section>
-  <audio class="audio" preload="metadata"></audio>
-  <div class="toast"></div>
+  {+section/}
+  <app-toast></app-toast>
 </div>
 {>"partials/footer" scripts=scripts /}

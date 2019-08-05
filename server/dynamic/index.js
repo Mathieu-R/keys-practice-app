@@ -34,7 +34,10 @@ app.set('views', templatePath);
 
 // app
 app.get('/', (req, res) => {
-  res.status(200).render('sections/home', viewOptions);
+  res.status(200).render('sections/home', {
+    ...viewOptions,
+    keys: ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
+  });
 });
 
 module.exports = app;

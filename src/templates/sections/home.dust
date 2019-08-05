@@ -1,5 +1,7 @@
 {>"base"/}
 
 {<section}
-
+  {#keys}
+  <app-key key=.></app-key>
+  {/keys}
 {/section}

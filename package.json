@@ -18,8 +18,10 @@
     "create-css-folder": "mkdirp ./dist/css",
     "release": "npm run build && npm version patch",
     "serve": "node server/index.js",
+    "serve:heroku": "NODE_ENV=production npm run serve",
     "type-check": "tsc --noEmit",
-    "bundlesize": "bundlesize --config bundlesize.json && size-limit"
+    "bundlesize": "bundlesize --config bundlesize.json && size-limit",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",

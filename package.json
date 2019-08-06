@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/Mathieu-R/keys-practice-app#readme",
   "dependencies": {
+    "@webcomponents/custom-elements": "^1.2.4",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "adaro": "^1.0.4",
     "comlink": "^4.0.2",

@@ -1,3 +1,5 @@
+declare module '@webcomponents/custom-elements';
+
 import AppKey from './components/app-key';
 import AppToast from './components/app-toast';
 
@@ -19,7 +21,7 @@ class App {
 
   private checkWebComponentsAreSupported () {
     if (!('customElements' in self)) {
-      import('@webcomponents/webcomponentsjs');
+      import('@webcomponents/custom-elements');
     }
   }
 

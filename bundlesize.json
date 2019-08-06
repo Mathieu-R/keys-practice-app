@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "path": "./dist/src/scripts/*.bundle.*.js",
+      "path": "./dist/bootstrap.js",
       "maxSize": "200kB"
     }
   ]

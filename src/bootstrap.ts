@@ -6,15 +6,23 @@ navigator.serviceWorker.register('/service-worker.js');
 class App {
   constructor () {
     this.installServiceWorker();
+    this.checkWebComponentsAreSupported();
   }
 
-  installServiceWorker () {
+  private installServiceWorker () {
     if (process.env.NODE_ENV !== 'PRODUCTION') {
       return;
     }
 
     navigator.serviceWorker.register('/service-worker.js');
   }
+
+  private checkWebComponentsAreSupported () {
+    if (!('customElements' in self)) {
+      import('@webcomponents/webcomponentsjs');
+    }
+  }
+
 }
 
 window.addEventListener('load', _ => new App());

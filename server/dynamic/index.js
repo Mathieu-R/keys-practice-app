@@ -6,10 +6,7 @@ const adaro = require('adaro');
 const app = express();
 
 const production = process.env.NODE_ENV === 'production';
-const staticPath = path.join(__dirname, '../../dist');
 const templatePath = path.join(__dirname, '../../src/templates');
-
-//const inlineStyle = fs.readFileSync(path.join(staticPath, 'css/critical.css'), 'utf-8');
 
 const options = {
   cache: production ? true : false,
@@ -23,9 +20,8 @@ const options = {
 // basic view options
 const viewOptions = {
   title: 'Keys Practice',
-  styles: ['dist/css/keys-practice.css'],
-  //inlineStyle,
-  scripts: ['dist/bootstrap.js']
+  styles: ['/static/css/keys-practice.css'],
+  scripts: ['/static/bootstrap.js']
 }
 
 app.engine('dust', adaro.dust(options));

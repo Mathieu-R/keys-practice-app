@@ -1,5 +1,3 @@
-const {promisify} = require('util');
-const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -23,7 +21,7 @@ app.use(bodyParser.json());
 app.use(compression());
 
 // static files
-app.use('/static', serveStatic(path.join(__dirname, '../dist/static'), staticOptions));
+app.use('/static', serveStatic(path.join(__dirname, '../dist'), staticOptions));
 
 // routes
 app.get('/health', (req, res) => res.send('server is up.'));

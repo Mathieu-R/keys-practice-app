@@ -21,6 +21,7 @@
     "serve:heroku": "NODE_ENV=production npm run serve",
     "type-check": "tsc --noEmit",
     "bundlesize": "bundlesize --config bundlesize.json && size-limit",
+    "lighthouse": "lighthousebot",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
@@ -45,6 +46,7 @@
     "comlink": "^4.0.2",
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "idb-keyval": "^3.2.0",
     "serve-static": "^1.14.1"
   },
   "devDependencies": {
@@ -54,6 +56,7 @@
     "concurrently": "^4.1.1",
     "copy-dir-cli": "0.0.3",
     "cp-cli": "^2.0.0",
+    "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.12.0",
     "rimraf": "^2.6.3",

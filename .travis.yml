@@ -15,3 +15,5 @@ install:
 script:
   - npm run build
   - npm run bundlesize
+after_success:
+  - npm run lighthouse --perf=80  -- https://keys-practice.herokuapp.com/

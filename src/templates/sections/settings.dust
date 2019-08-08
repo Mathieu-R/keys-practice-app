@@ -1,0 +1,16 @@
+<div class="settings">
+  <app-range class="range">
+    <input
+      type="range"
+      class="range__input"
+    />
+    <div class="range__ui-container">
+      <div class="range__track"></div>
+      <div class="range__track-used">
+      <div class="range__round-container">
+        <div class="range__tooltip"></div>
+        <div class="range__round">
+      </div>
+    </div>
+  </app-range>
+</div>
